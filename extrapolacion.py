@@ -15,8 +15,8 @@ except ValueError as e:
 #print(df.head(2))
 
 class Incremento:
-    POBLACION_2010 = 9445281
-    POBLACION_2020 = 10760028
+    POBLACION_2010 = 9445281  # Nz
+    POBLACION_2020 = 10760028 # Nn+z
     DIAS_TRANSCURRIDOS = 28 + (8 * 365) + 317
     
     def __init__(self, df):
@@ -24,6 +24,7 @@ class Incremento:
         self.años_equivalentes = self.DIAS_TRANSCURRIDOS / 365
     
     def calcular_incremento_aritmetico(self):
+        """ Incremento aritmetico formula: r = ([Nn+z/Nz]-1)/n """
         incremento_anual_lineal = ((self.POBLACION_2020 / self.POBLACION_2010) - 1) / self.años_equivalentes
         return incremento_anual_lineal
     
@@ -109,15 +110,3 @@ class Extrapolacion:
         poblacion_extrapolada_log = self.poblacion_inicial * math.exp(r_logaritmico * años_transcurridos)
         return poblacion_extrapolada_log, dias_transcurridos, años_transcurridos
   
-def test_todos_los_metodos():
-    print("=== TEST TODOS LOS MÉTODOS ===")
-    municipio_test = df['municipio'].iloc[0]
-    print(f"Probando: {municipio_test}")
-    
-""" 
-# Test básico de carga
-#print("=== TEST 1: Carga de datos ===")
-#print(f"Municipios disponibles: {len(df)}")
-#print(f"Primeros municipios: {df['municipio'].head(3).tolist()}")
-#print()
-"""
