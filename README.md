@@ -15,8 +15,8 @@ Usando los modelos aritmético, geometrico, exponencial.
 - [X]  Modelo aritmético
 - [X] - Modelo Geometrico
 - [X]  Modelo exponencial 
-- [ ] Creacion de APi la data
-- [ ] Creacion de API para extrapolar
+- [X] Creacion de APi la data
+- [x] Creacion de API para extrapolar
 
 ## 🛠️ Instalación
 
