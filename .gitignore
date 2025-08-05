@@ -1,0 +1,6 @@
+# ambientes virtuales
+.venv/
+poblacion-vemv/
+
+#cache
+__pycache__/
