@@ -2,17 +2,9 @@ import pandas as pd
 import os
 import math 
 from datetime import datetime
-file_path = 'data/poblacion.xlsx'
+from modulos.data import get_dataframe
+df = get_dataframe()
 
-if not os.path.exists(file_path):
-    raise FileNotFoundError(f"El archivo '{file_path}' no existe. Verifica la ruta.")
-
-try:
-    df = pd.read_excel(file_path, sheet_name=1)
-except ValueError as e:
-    raise ValueError(f"Error al leer la hoja de cálculo: {e}")
-
-#print(df.head(2))
 
 class Incremento:
     POBLACION_2010 = 9445281  # Nz
@@ -109,4 +101,4 @@ class Extrapolacion:
         r_logaritmico = self.incremento_calc.calcular_incremento_logritmico()
         poblacion_extrapolada_log = self.poblacion_inicial * math.exp(r_logaritmico * años_transcurridos)
         return poblacion_extrapolada_log, dias_transcurridos, años_transcurridos
-  
+    

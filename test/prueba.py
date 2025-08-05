@@ -4,7 +4,6 @@ import os
 import math 
 from datetime import datetime
 
-# === COPIA AQUÍ TODO TU CÓDIGO DE CLASES ===
 file_path = 'data/poblacion.xlsx'
 
 if not os.path.exists(file_path):
@@ -54,7 +53,7 @@ class Extrapolacion:
         
     def extrapolar_aritmetico(self):
         """ 
-        Extraplacion aritmetico formula: nz = nn +(nn x (rxn))
+        Formula: nz = nn +(nn x (rxn))
         """
         r_aritmetico = self.incremento_calc.calcular_incremento_aritmetico()  
         poblacion_extrapolada_ar = self.poblacion_inicial + (self.poblacion_inicial * r_aritmetico * self.periodo)
